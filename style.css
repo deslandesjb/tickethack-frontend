@@ -1,0 +1,9 @@
+#container {display:grid;
+    border: 1px crimson solid;
+    height: 100vh;
+    grid-template-rows: repeat(  2 ,1fr);
+    grid-template-columns: repeat(2 , 1fr);
+
+}
+
+
