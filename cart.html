@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - Tickethack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./cart.css" />
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <a href="/">Tickethack</a>
+      </div>
+      <nav>
+        <a href="./cart.html">Cart</a>
+        <a href="#">Bookings</a>
+      </nav>
+    </header>
+    <main>
+      <div id="empty" class="container">
+        <p>No booking yet.</p>
+        <p>Why not plan a trip?</p>
+      </div>
+      <div id="cartItems" class="container">
+        <p>My cart</p>
+        <div class="elements">
+          <p class="roads"><span class="departure">Paris</span> > <span class="arrival">Lyon</span></p>
+          <div class="time">20:09</div>
+          <div class="price"><span class="priceToShow">103</span>€</div>
+          <button class="remove">x</button>
+        </div>
+        <div class="elements">
+          <p class="roads"><span class="departure">Paris</span> > <span class="arrival">Lyon</span></p>
+          <div class="time">20:09</div>
+          <div class="price"><span class="priceToShow">103</span>€</div>
+          <button class="remove">x</button>
+        </div>
+        <div id="total">
+          <div>Total: <span class="totalPrice">230</span>€</div>
+          <button id="purchase">Purchase</button>
+        </div>
+      </div>
+    </main>
+    <script src="./cart.js"></script>
+  </body>
+</html>
