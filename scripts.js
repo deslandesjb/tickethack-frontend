@@ -1,3 +1,30 @@
+function addToCart() {
+  const addCta = document.querySelectorAll(".add");
+
+  // console.log(addCta);
+  for (let cta of addCta) {
+    cta.addEventListener("click", function () {
+      console.log(this.id);
+
+      // fetch(`http://localhost:3000/weather/${this.id}`, {
+      //   method: "DELETE",
+      // });
+      // this.parentNode.remove();
+
+      fetch("http://localhost:3000/cart", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({tripId: this.id}),
+      })
+        .then((response) => response.json())
+        .then(() => {
+          // console.log(data);
+          window.location.assign("cart.html");
+        });
+    });
+  }
+}
+
 document.querySelector("#purchase").addEventListener("click", function () {
   const cityDeparture = document.querySelector("#cityDeparture");
   const cityArrival = document.querySelector("#cityArrival");
@@ -34,6 +61,7 @@ document.querySelector("#purchase").addEventListener("click", function () {
             </div>
           `;
         }
+        addToCart();
       } else {
         document.querySelector("#menu-2-error-img").src = "./images/notfound.png";
       }
@@ -42,27 +70,3 @@ document.querySelector("#purchase").addEventListener("click", function () {
       // cityDate.value = "";
     });
 });
-
-//
-// fetch("http://localhost:3000/weather")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     if (data.weather) {
-//       for (let i = 0; i < data.weather.length; i++) {
-//         document.querySelector("#cityList").innerHTML += `
-// 				<div class="cityContainer">
-// 				<p class="name">${data.weather[i].cityName}</p>
-// 				<p class="description">${data.weather[i].description}</p>
-// 				<img class="weatherIcon" src="images/${data.weather[i].main}.png"/>
-// 				<div class="temperature">
-// 					<p class="tempMin">${data.weather[i].tempMin}°C</p>
-// 					<span>-</span>
-// 					<p class="tempMax">${data.weather[i].tempMax}°C</p>
-// 				</div>
-// 				<button class="deleteCity" id="${data.weather[i].cityName}">Delete</button>
-// 			</div>
-// 			`;
-//       }
-//       updateDeleteCityEventListener();
-//     }
-//   });
