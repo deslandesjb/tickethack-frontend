@@ -51,7 +51,6 @@ document.querySelector("#purchase").addEventListener("click", function () {
           if (getMinutes < 10) {
             getMinutes = "0" + getMinutes;
           }
-
           document.querySelector("#menu-2-trips-list").innerHTML += `
             <div class="elements">
               <p class="roads"><span class="departure">${data.trips[i].departure}</span> > <span class="arrival">${data.trips[i].arrival}</span></p>

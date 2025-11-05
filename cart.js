@@ -1,5 +1,26 @@
-const elementsContainer = document.querySelector("#elementsContainer");
+function totalCart() {
+  const totalPrice = document.querySelector("#totalPrice");
+  fetch(`http://localhost:3000/cart`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.result) {
+        let total = 0;
+        for (let i = 0; i < data.trips.length; i++) {
+          // console.log(data.trips[i]);
+          // console.log(data.trips[i].trips[0].departure);
+          total += data.trips[i].trips[0].price;
+          console.log(total);
+        }
+        totalPrice.textContent = total;
+        removeCartItem();
+      } else {
+        console.log("ZERO");
+        totalPrice.textContent = "0";
+      }
+    });
+}
 
+const elementsContainer = document.querySelector("#elementsContainer");
 function removeCartItem() {
   const removeCta = document.querySelectorAll(".remove");
   for (let cta of removeCta) {
@@ -15,6 +36,7 @@ function removeCartItem() {
         .then(() => {
           this.parentNode.remove();
           // window.location.assign("cart.html");
+          totalCart();
         });
 
       // console.log();
@@ -46,6 +68,7 @@ function getAllCart() {
           `;
         }
         removeCartItem();
+        totalCart();
       } else {
         console.log("empty");
         const myCart = document.querySelector("#myCart");
