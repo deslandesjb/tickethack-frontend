@@ -1,5 +1,6 @@
 :root {
   --primary-color: #4ea890;
+  --primary-color-hover: #428f7a;
   --train-bg-color: #f7f0f0;
   --bg-color: #f3f3f3;
   --bg-total: #001747;
@@ -271,7 +272,7 @@ a {
   overflow: scroll;
   padding-top: 12px;
 }
-.elements .remove {
+.elements .add {
   background-color: var(--primary-color);
   border: var(--primary-color);
   color: #fff;

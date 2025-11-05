@@ -3,26 +3,22 @@ document.querySelector("#purchase").addEventListener("click", function () {
   const cityArrival = document.querySelector("#cityArrival");
   const cityDate = document.querySelector("#cityDate");
 
-  // console.log(cityDeparture, cityArrival, cityDate);
-  // console.log("--");
-  // console.log(cityDeparture.value, cityArrival.value, cityDate.value);
-  // console.log(typeof cityDeparture.value, typeof cityArrival.value, typeof cityDate.value); // string all
   fetch("http://localhost:3000/trips", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({departure: cityDeparture.value, arrival: cityArrival.value, date: cityDate.value}),
-    // body: JSON.stringify({departure: cityDeparture.value}, {arrival: cityArrival.value}, {date: cityDate.value}),
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       if (data.result) {
-        document.querySelector("#menu-2-error").remove();
+        if (document.querySelector("#menu-2-error")) {
+          document.querySelector("#menu-2-error").remove();
+        }
 
-        // data.trips.sort();
+        data.trips.sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
+
         for (let i = 0; i < data.trips.length; i++) {
-          console.log(data.trips[i].date);
-          // console.log(typeof data.trips[i].date);
           const getHour = new Date(data.trips[i].date);
           let getMinutes = getHour.getMinutes();
           if (getMinutes < 10) {
@@ -34,7 +30,7 @@ document.querySelector("#purchase").addEventListener("click", function () {
               <p class="roads"><span class="departure">${data.trips[i].departure}</span> > <span class="arrival">${data.trips[i].arrival}</span></p>
               <div class="time">${getHour.getHours()}:${getMinutes}</div>
               <div class="price"><span class="priceToShow">${data.trips[i].price}</span>€</div>
-              <button class="remove" id="${data.trips[i]._id}">Book</button>
+              <button class="add" id="${data.trips[i]._id}">Book</button>
             </div>
           `;
         }

@@ -56,10 +56,10 @@ main {
   background-color: #fff;
   border-radius: 4px;
 }
-.container#empty {
+.container #empty {
   padding: 20px 0;
 }
-.container > p {
+.container p {
   text-align: center;
 }
 
