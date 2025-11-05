@@ -1,4 +1,27 @@
 const elementsContainer = document.querySelector("#elementsContainer");
+
+function removeCartItem() {
+  const removeCta = document.querySelectorAll(".remove");
+  for (let cta of removeCta) {
+    cta.addEventListener("click", function () {
+      console.log(this.id);
+
+      fetch(`http://localhost:3000/cart/${this.id}`, {
+        method: "DELETE",
+        // headers: {"Content-Type": "application/json"},
+        // body: JSON.stringify({tripId: this.id}),
+      })
+        .then((response) => response.json())
+        .then(() => {
+          this.parentNode.remove();
+          // window.location.assign("cart.html");
+        });
+
+      // console.log();
+    });
+  }
+}
+
 function getAllCart() {
   fetch(`http://localhost:3000/cart`)
     .then((response) => response.json())
@@ -22,6 +45,7 @@ function getAllCart() {
             </div>
           `;
         }
+        removeCartItem();
       } else {
         console.log("empty");
         const myCart = document.querySelector("#myCart");
@@ -40,3 +64,5 @@ function getAllCart() {
 
 getAllCart();
 // elementsContainer.addEventListener("click", getAllCart());
+
+// removeCartItem();

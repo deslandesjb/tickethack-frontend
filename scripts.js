@@ -11,13 +11,13 @@ function addToCart() {
       // });
       // this.parentNode.remove();
 
-      fetch("http://localhost:3000/cart", {
+      fetch("http://localhost:3000/cart/", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({tripId: this.id}),
       })
         .then((response) => response.json())
-        .then(() => {
+        .then((data) => {
           // console.log(data);
           window.location.assign("cart.html");
         });
