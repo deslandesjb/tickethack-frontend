@@ -1,5 +1,6 @@
 :root {
   --primary-color: #4ea890;
+  --primary-color-hover: #428f7a;
   --train-bg-color: #f7f0f0;
   --bg-color: #f3f3f3;
   --bg-total: #001747;
@@ -23,7 +24,7 @@ header {
   font-weight: bold;
   transition: color 0.2s;
   &:hover {
-    color: #000;
+    color: var(--primary-color-hover);
   }
 }
 header nav {
@@ -80,6 +81,12 @@ main {
   border-radius: 4px;
   width: 28px;
   height: 28px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: var(--primary-color-hover);
+    border: var(--primary-color-hover);
+  }
 }
 
 #total {
@@ -97,4 +104,10 @@ main {
   color: #fff;
   border-radius: 4px;
   padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: var(--primary-color-hover);
+    border: var(--primary-color-hover);
+  }
 }
