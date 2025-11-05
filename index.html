@@ -9,39 +9,36 @@
   <body>
     <div id="container">
       <header id="header">
-        <h2 id="title-header"><a id="homepage";href="./homepage.html">Tickethack</a>
-
-        </h2>
+        <h2 id="title-header"><a id="homepage" ;href="./homepage.html">Tickethack</a> </h2>
         <div class="nav-links">
-        
-         <a href="./cart.html">Cart</a>
-         <button id="bookings">Bookings</button>
+          <a href="./cart.html">Cart</a>
+          <button id="bookings">Bookings</button>
         </div>
       </header>
       <main id="main">
         <h1 id="title-main">Explore the world effortlessly by train</h1>
-        <h3 id="text">
-          Compare, book and enjoy cheap prices for train tickets: your journey
-          starts on Tickethack
-        </h3>
+        <h3 id="text"> Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack </h3>
         <div id="menus">
           <div id="menu-1">
             <div class="search-inputs">
-              <input type="text" id="departure" placeholder="Departure" />
+              <input class="input-content" type="text" id="cityDeparture" placeholder="Departure" />
               <hr class="input-separator" />
-              <input type="text" id="arrival" placeholder="Arrival" />
+              <input class="input-content" type="text" id="cityArrival" placeholder="Arrival" />
             </div>
             <div class="date-selector">
-              <input type="date" id="trip-date" value="2022-06-23" />
+              <input type="date" name="cityDate" id="cityDate" />
             </div>
             <div id="arround-purchase">
               <button id="purchase">Search</button>
             </div>
           </div>
           <div id="menu-2">
-            <img src="./images/train.png" alt="train" id="train-img" />
-             <hr class="separator" />
-             <h4 id="text-train">it's time to book your future trip.</h4>
+            <div id="menu-2-error">
+              <img id="menu-2-error-img" src="./images/train.png" alt="train" id="train-img" />
+              <hr class="separator" />
+              <h4 id="text-train">it's time to book your future trip.</h4>
+            </div>
+            <div id="menu-2-trips-list"></div>
           </div>
         </div>
       </main>

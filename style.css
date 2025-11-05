@@ -28,7 +28,7 @@ body {
 #title-header {
   color: #4ea891;
   margin: 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .nav-links {
   display: flex;
@@ -37,7 +37,8 @@ body {
   align-items: center;
 }
 
-#cart, #bookings {
+#cart,
+#bookings {
   background: none;
   border: none;
   color: #000000;
@@ -48,10 +49,11 @@ body {
   margin: 0;
   width: auto;
   text-transform: capitalize;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-#cart:hover, #bookings:hover {
+#cart:hover,
+#bookings:hover {
   opacity: 0.8;
 }
 #main {
@@ -71,12 +73,12 @@ body {
 }
 #title-main {
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
 }
 #text {
   color: aliceblue;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 #menus {
@@ -171,7 +173,7 @@ body {
   height: 2px;
   background: #4ea891;
   border: none;
-  margin: 6px 20px 6px 20px;
+  margin: 6px auto;
   border-radius: 2px;
 }
 
@@ -181,10 +183,9 @@ body {
   color: #000000;
   text-align: center;
   font-weight: 300;
-  font-family:sans-serif
+  font-family: sans-serif;
 }
 #arround-purchase {
- 
   color: #fff;
   width: 100%;
   display: flex;
@@ -212,19 +213,19 @@ body {
   cursor: pointer;
 }
 
-#departure{
+#departure {
   border: none;
 }
-#arrival{
+#arrival {
   border: none;
 }
-#trip-date{
+#trip-date {
   border: none;
   outline: none;
   font-family: sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
   background: none;
   border: none;
@@ -236,10 +237,52 @@ a{
   margin: 0;
   width: auto;
   text-transform: capitalize;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-#homepage{ color: #4ea891;
+#homepage {
+  color: #4ea891;
   margin: 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
 
+.input-content {
+  background-color: var(--bg-color);
+}
+
+#menu-2-error-img {
+  display: block;
+  width: 70%;
+  margin: 20px auto;
+}
+
+.elements {
+  display: flex;
+  align-items: center;
+  background-color: var(--train-bg-color);
+  justify-content: space-between;
+  padding: 0 8px;
+  width: 92%;
+  margin: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+#menu-2-trips-list {
+  width: 100%;
+  overflow: scroll;
+  padding-top: 12px;
+}
+.elements .remove {
+  background-color: var(--primary-color);
+  border: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+  /* width: 28px;
+  height: 28px; */
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: var(--primary-color-hover);
+    border: var(--primary-color-hover);
+  }
 }
